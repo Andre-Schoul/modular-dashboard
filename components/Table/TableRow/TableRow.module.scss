@@ -1,0 +1,37 @@
+@import '../../../styles/variables';
+@import '../../../styles/modularStyles';
+
+.Id {
+  padding-right: 25px;
+  text-align: right;
+}
+
+.Editable {
+  text-align: right;
+
+  svg {
+    @include icon();
+  }
+}
+
+.Cancel {
+  transform: rotate(45deg);
+}
+
+.TableRow {
+
+  * {
+    font-size: 1rem;
+  }
+
+  input {
+    padding: 2px 4px;
+    border: 1px solid rgb(100, 100, 100);
+    outline: none;
+  }
+
+  input:disabled {
+    background-color: $background-white;
+    border: 1px solid transparent;
+  }
+}

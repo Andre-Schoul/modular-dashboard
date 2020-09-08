@@ -1,0 +1,25 @@
+@import './modularStyles';
+@import './variables';
+
+.Bla {
+  background-color: red;
+}
+
+.Slug {
+  background-color: blue;
+}
+
+
+
+.Grid {
+  @include modularGrid();
+
+  div:first-of-type {
+    @include modularGrid-Wide();
+  }
+
+  div:nth-of-type(2) {
+    @include modularGrid-Wide();
+    @include modularGrid-Tall();
+  }
+}

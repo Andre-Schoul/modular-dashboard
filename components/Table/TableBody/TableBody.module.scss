@@ -1,0 +1,22 @@
+@import '../../../styles/variables';
+@import '../../../styles/modularStyles';
+
+.TableBody {
+  
+  & > div {
+    @include modularCard();
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-columns: 60px 1fr 1fr 101px;
+    margin-bottom: 2px;
+    padding: 0.7rem 1.3rem;
+
+    & > * {
+      margin: auto 0;
+    }
+  }
+
+  & > * {
+    margin: auto 0;
+  }
+}

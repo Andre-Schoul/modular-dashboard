@@ -1,0 +1,40 @@
+@import '../../styles/variables';
+@import '../../styles/modularStyles';
+
+.TopPadding,
+.BottomPadding {
+  position: fixed;
+  width: 100%;
+  height: $outer-dashboard-padding;
+  left: 0;
+  z-index: 7;
+  background-color: $background-color;
+}
+
+.TopPadding {
+  top: 0;
+}
+
+.BottomPadding {
+  bottom: 0;
+  left: #{rem(strip-units($sidebarSmall)) + $outer-dashboard-padding};
+  width: calc(100% - #{rem(strip-units($sidebarSmall)) + 2 * $outer-dashboard-padding});
+  border-top: 1px solid $border-color;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: $outer-dashboard-padding;
+    background-color: $background-color;
+  }
+
+  &::before {
+    left: -5px;
+  }
+
+  &::after {
+    right: -5px;
+  }
+}

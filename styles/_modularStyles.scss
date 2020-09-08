@@ -1,0 +1,71 @@
+@import './variables';
+
+@function rem($px, $base: 16) {
+  @return $px / $base;
+};
+
+@function strip-units($value) {
+  @return ($value / ($value * 0 + 1));
+};
+
+@mixin modularStyle($backgroundColor, $border, $boxShadow, $width, $height, $margin, $padding, $display, $position) {
+  background-color: $backgroundColor;
+  border: $border;
+  box-shadow: $boxShadow;
+  width: $width;
+  height: $height;
+  margin: $margin;
+  padding: $padding;
+  display: $display;
+  position: $position;
+}
+
+@mixin modularCard {
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+              0px 1px 1px  0px rgba(0, 0, 0, 0.14),
+              0px 1px 3px  0px rgba(0, 0, 0, 0.12);
+  background-color: $background-white;
+  padding: $dashboard-padding;
+}
+
+@mixin icon() {
+  font-size: 1.1rem;
+  box-sizing: content-box;
+  padding: 0.5rem;
+  color: $icon-color;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $icon-hover-color;
+    border-radius: 50%;
+  }
+}
+
+
+
+/* gird layout */
+@mixin modularGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: $outer-dashboard-padding;
+}
+
+@mixin modularGrid-Tall {
+  /*grid-row: span 2 / auto;*/
+  @include minGridWidth {
+    grid-row: span 2 / auto;
+  }
+}
+
+@mixin modularGrid-Wide {
+  /*grid-column: span 2 / auto;*/
+  @include minGridWidth {
+    grid-column: span 2 / auto;
+  }
+}
+
+@mixin minGridWidth {
+  @media screen and (min-width: 800px) {
+    @content;
+  }
+}

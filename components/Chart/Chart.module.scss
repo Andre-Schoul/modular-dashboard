@@ -1,0 +1,44 @@
+@import '../../styles/modularStyles';
+@import '../../styles/variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.Chart {
+  @include modularCard();
+  /*overflow-x: auto;*/
+  overflow-x: hidden;
+  div {
+    overflow-x: auto;
+  }
+
+  /*&:not(:last-of-type) {
+    margin-bottom: $outer-dashboard-padding;
+  }*/
+
+  svg rect {
+    fill: $icon-color;
+    z-index: 9;
+  }
+
+  svg text {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  rect:hover {
+    fill: $chart-rect-hover;
+    cursor: pointer;
+  }
+
+  .Grid { 
+    line {
+      stroke: rgba(0, 0, 0, 0.2);
+      stroke-opacity: 1;
+      shape-rendering: crispEdges;
+      z-index: 1;
+    }
+
+    path {
+      stroke-width: 0;
+    }
+  }
+}

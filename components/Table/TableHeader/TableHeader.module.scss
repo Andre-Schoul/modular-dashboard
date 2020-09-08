@@ -1,0 +1,45 @@
+@import '../../../styles/variables';
+@import '../../../styles/modularStyles';
+
+.TableHeader {
+  @include modularCard();
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  grid-template-columns: 60px 1fr 1fr 101px;
+  position: sticky;
+  margin-bottom: 3px;
+  top: $outer-dashboard-padding;
+  padding: 1.1rem 1.3rem;
+
+  & > * {
+    margin: auto 0;
+    padding: 0 4px;
+  }
+
+  div:not(.Editable) > svg {
+    margin-left: 2px;
+    padding-left: 2px;
+    margin-bottom: -2px;
+    cursor: pointer;
+
+    &:hover {
+      color: $table-icon-hover;
+    }
+  }
+
+  .Editable {
+    text-align: right;
+    padding: 0 0 0 4px;
+
+    svg {
+      @include icon();
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.Id {
+  padding: 0;
+  padding-right: 25px;
+  text-align: right;
+}
